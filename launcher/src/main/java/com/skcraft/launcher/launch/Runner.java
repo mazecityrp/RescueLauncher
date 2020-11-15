@@ -346,6 +346,10 @@ public class Runner implements Callable<Process>, ProgressObservable {
      */
     private void addLegacyArgs() {
         builder.getFlags().add("-Dminecraft.applet.TargetDirectory=" + instance.getContentDir());
+        String Accesstoken = session.getAccessToken();
+        String uuid = session.getUuid();
+        builder.getFlags().add("-Dtoken=" + Accesstoken);
+        builder.getFlags().add("-Duuid=" + uuid);
     }
 
     /**
